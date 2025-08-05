@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บันทึกข้อมูล</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js');
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2 id="welcome-message"></h2>
+        
+        <form id="dataForm">
+            <textarea id="dataText" placeholder="กรอกข้อมูลที่นี่..." rows="5" required></textarea>
+            <button type="submit">บันทึกข้อมูล</button>
+        </form>
+
+        <div id="data-list-container">
+            <h3>ข้อมูลที่บันทึกไว้:</h3>
+            <ul id="data-list"></ul>
+        </div>
+        
+        <button id="logout-button">ออกจากระบบ</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
